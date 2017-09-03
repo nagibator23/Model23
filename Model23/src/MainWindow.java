@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class MainWindow extends JFrame {
@@ -35,7 +36,11 @@ public class MainWindow extends JFrame {
 	removeBut = new JButton("New button");
 	removeBut.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			model.removeElement(list.getSelectedValue());
+			
+			List<String>objects=list.getSelectedValuesList();
+			for (String s:objects){
+				model.removeElement(s);
+			}
 			list.updateUI();
 		}
 	});
@@ -48,6 +53,7 @@ public class MainWindow extends JFrame {
 			String s=JOptionPane.showInputDialog("enter your string here");
 			model.addElement(s);
 			list.updateUI();
+			
 		}
 	});
 	add_btn.setBounds(343, 71, 89, 23);
