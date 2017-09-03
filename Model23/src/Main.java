@@ -7,7 +7,7 @@ public static MainWindow window;
 		for(int i=0;i<10;i++){
 		window.addElement("Hello world"+""+i);
 		}
-		
+		window.updateUI();
 	}
 }
 
